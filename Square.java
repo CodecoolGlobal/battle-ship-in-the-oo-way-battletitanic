@@ -1,7 +1,7 @@
 public class Square {
     private final static String SYMBOL = "X";
 
-    private boolean isMark;
+    public boolean isMark;
 
     public void mark(){
         isMark = true; 
@@ -9,7 +9,7 @@ public class Square {
 
     @Override
     public String toString(){
-        return isMark ? SYMBOL : " ";
+        return isMark ? SYMBOL : "~";
     }
 
 }
