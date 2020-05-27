@@ -9,15 +9,16 @@ public class Main {
 
 
 
-        //List<Ship> ships = new ArrayList<>();
+        List<Ship> ships = new ArrayList<>();
 
-        //List<Square> pojedynczyStatek = new ArrayList<>();
-        Ship statek = new Ship(4, 4, 4, "s");
-        //statek.addSquer();
-        
+     
+        Ship statek = new Ship(0, 1, 5, "s");
+        Ship drugistatek = new Ship(7, 6, 1, "");
+   
+        ships.add(statek); ships.add(drugistatek);
 
+        Ocean bałtyk = new Ocean(ships);
 
-        Ocean bałtyk = new Ocean(statek);
         System.out.println(bałtyk.toString());
     
 

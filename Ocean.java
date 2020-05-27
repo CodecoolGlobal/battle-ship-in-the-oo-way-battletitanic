@@ -7,11 +7,11 @@ public class Ocean {
     private static final int HEIGHT = 10;
      
     private List<List<Square>> squares;
-    //private List<Ship> ships;
-    private Ship ship;
-    
-   //public Ocean(List<Ship> ships){
-    public Ocean(Ship ship){
+    private List<Ship> ships;
+    //private Ship ship;
+
+    public Ocean(List<Ship> ships){
+    //public Ocean(Ship ship){
 
         List<List<Square>> squares = new ArrayList<>();
 
@@ -22,29 +22,26 @@ public class Ocean {
             }
             squares.add(line);
         }
-        int i = 0;
+       
 
         
-            
-        for (Square elements : ship.getListSauqre()){
-            if (ship.getOrientation().equals("")){
-                squares.get(ship.getCordinateX()+ i).set(ship.getCordinateY(), elements);
-            }else{
-                squares.get(ship.getCordinateX()).set(ship.getCordinateY() + i, elements);
+        for (Ship ship : ships){
+            int i = 0;
+            for (Square elements : ship.getListSauqre()){
+                if (ship.getOrientation().equals("")){
+                    squares.get(ship.getCordinateX()+ i).set(ship.getCordinateY(), elements);
+                }else{
+                    squares.get(ship.getCordinateX()).set(ship.getCordinateY() + i, elements);
+                }
+                
+                i++;
             }
-            
-            i++;
         }
-        
-
         //for (int i=0; i< ship.getLenght(); i++){
             //squares.get(ship.getCordinateX()).set(ship.getCordinateY(), ship.getSquer(0));
-            //squares.get(ship.getCordinateX()+ i).set(ship.getCordinateY(), ship.getSquer(0));
-
-        
-    
+            //squares.get(ship.getCordinateX()+ i).set(ship.getCordinateY(), ship.getSquer(0));    
         this.squares = squares;
-        this.ship = ship;
+        //this.ship = ship;
     }
     
     @Override
