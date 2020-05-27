@@ -7,12 +7,26 @@ public class Ship {
     private List<Square> squares;
     private int x;
     private int y; 
+    private int lenght; 
+    private String orientation; 
 
-    public Ship(List<Square> squares, int x, int y){
+    public Ship( /*List<Square> squares,*/ int x, int y, int lenght, String orientation){
         
-        this.squares = new ArrayList<>();
+        
+
+        squares = new ArrayList<>();
+        Square ship = new Square();
+        ship.mark();
+        for(int i =0; i< lenght; i++){
+            squares.add(ship);
+        }
+
+        this.squares = squares;
         this.x = x;
         this.y = y;
+        this.lenght =lenght;
+        this.orientation= orientation;
+
     }
 
     public void addSquer(){
@@ -30,9 +44,20 @@ public class Ship {
         return y;
     }
 
-    public Square getSquer(int index){
+    public int getLenght(){
+        return lenght;
+    }
 
+    public List<Square> getListSauqre(){
+        return squares;
+    }
+
+    public Square getSquer(int index){
         return squares.get(index);
+    }
+
+    public String getOrientation(){
+        return orientation;
     }
 
     @Override

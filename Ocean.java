@@ -22,9 +22,27 @@ public class Ocean {
             }
             squares.add(line);
         }
+        int i = 0;
 
-        squares.get(ship.getCordinateX()).set(ship.getCordinateY(), ship.getSquer(0));
+        
+            
+        for (Square elements : ship.getListSauqre()){
+            if (ship.getOrientation().equals("")){
+                squares.get(ship.getCordinateX()+ i).set(ship.getCordinateY(), elements);
+            }else{
+                squares.get(ship.getCordinateX()).set(ship.getCordinateY() + i, elements);
+            }
+            
+            i++;
+        }
+        
 
+        //for (int i=0; i< ship.getLenght(); i++){
+            //squares.get(ship.getCordinateX()).set(ship.getCordinateY(), ship.getSquer(0));
+            //squares.get(ship.getCordinateX()+ i).set(ship.getCordinateY(), ship.getSquer(0));
+
+        
+    
         this.squares = squares;
         this.ship = ship;
     }
