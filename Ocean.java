@@ -5,9 +5,8 @@ public class Ocean {
     
     private static final int WIDTH = 10;
     private static final int HEIGHT = 10;
-     
     private List<List<Square>> squares;
-    private List<Ship> ships;
+    //private List<Ship> ships;
     //private Ship ship;
 
     public Ocean(List<Ship> ships){
@@ -49,13 +48,22 @@ public class Ocean {
 
         String newLine = "\n";
         StringBuilder sb = new StringBuilder();
+        String coordinateX = "  A B C D E F G H I J";
+        
+        //List<Integer> coordinateY = new ArrayList<>();
+        int coordinateY = 0;
 
+        sb.append(coordinateX);
+        sb.append(newLine);
         for( List<Square> lines : squares){
+            sb.append(coordinateY);
+            sb.append(" ");
             for(Square elements : lines){
                 sb.append(elements);
                 sb.append(" ");
             }
             sb.append(newLine);
+            coordinateY++;
         }
 
         return sb.toString();

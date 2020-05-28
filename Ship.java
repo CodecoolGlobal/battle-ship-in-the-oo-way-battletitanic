@@ -10,10 +10,8 @@ public class Ship {
     private int lenght; 
     private String orientation; 
 
-    public Ship( /*List<Square> squares,*/ int x, int y, int lenght, String orientation){
+    public Ship(int x, int y, int lenght, String orientation){
         
-        
-
         squares = new ArrayList<>();
         Square ship = new Square();
         ship.mark();
@@ -21,7 +19,6 @@ public class Ship {
             squares.add(ship);
         }
 
-        this.squares = squares;
         this.x = x;
         this.y = y;
         this.lenght =lenght;
