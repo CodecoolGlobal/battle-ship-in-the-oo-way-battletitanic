@@ -20,7 +20,6 @@ public class Ocean {
             squares.add(line);
         }
 
-
         for (Ship ship : ships){
             int i = 0;
             for (Square elements : ship.getListSauqre()){
