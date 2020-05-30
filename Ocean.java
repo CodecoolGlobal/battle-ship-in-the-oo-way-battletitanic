@@ -6,11 +6,9 @@ public class Ocean {
     private static final int WIDTH = 10;
     private static final int HEIGHT = 10;
     private List<List<Square>> squares;
-    //private List<Ship> ships;
-    //private Ship ship;
+    
 
     public Ocean(List<Ship> ships){
-    //public Ocean(Ship ship){
 
         List<List<Square>> squares = new ArrayList<>();
 
@@ -21,16 +19,15 @@ public class Ocean {
             }
             squares.add(line);
         }
-       
 
-        
+
         for (Ship ship : ships){
             int i = 0;
             for (Square elements : ship.getListSauqre()){
                 if (ship.getOrientation().equals("")){
-                    squares.get(ship.getCordinateX()+ i).set(ship.getCordinateY(), elements);
+                    squares.get(ship.getCordinateY()+ i).set(ship.getCordinateX(), elements);
                 }else{
-                    squares.get(ship.getCordinateX()).set(ship.getCordinateY() + i, elements);
+                    squares.get(ship.getCordinateY()).set(ship.getCordinateX() + i, elements);
                 }
                 
                 i++;
@@ -43,9 +40,16 @@ public class Ocean {
         //this.ship = ship;
     }
     
+    public static int getWIDTH(){
+        return WIDTH;
+    }
+
+    public static int getHEIGHT(){
+        return HEIGHT;
+    }
+
     @Override
     public String toString(){
-
         String newLine = "\n";
         StringBuilder sb = new StringBuilder();
         String coordinateX = "  A B C D E F G H I J";

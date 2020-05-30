@@ -7,6 +7,7 @@ public class Square {
         isMark = true; 
     }
 
+
     @Override
     public String toString(){
         return isMark ? SYMBOL : "~";

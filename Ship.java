@@ -9,21 +9,45 @@ public class Ship {
     private int y; 
     private int lenght; 
     private String orientation; 
+    private List<List<Integer>> coordinatesList; 
+    private static final int boardWIDTH = Ocean.getWIDTH();
+    private static final int boardHEIGHT = Ocean.getHEIGHT();
+    
 
     public Ship(int x, int y, int lenght, String orientation){
         
+
         squares = new ArrayList<>();
+        List<List<Integer>> coordinatesList = new ArrayList<>();
+        
         Square ship = new Square();
         ship.mark();
-        for(int i =0; i< lenght; i++){
-            squares.add(ship);
-        }
+        
+        if(checkIfIsOnBoard(x, y, lenght, orientation)){
+            int coordinateX = x;
+            int coordinateY = y;
+
+
+            for(int i = 0; i< lenght; i++){
+                List<Integer> coordinate = new ArrayList<>();
+                coordinate.add(coordinateX); coordinate.add(coordinateY);
+                squares.add(ship);
+                coordinatesList.add(coordinate);
+            
+                if(orientation.equals("")){
+                    coordinateY++;
+                }else{
+                    coordinateX++;
+                }
+            }}else{
+                System.out.println("Ship ouf of a board");
+            }
 
         this.x = x;
         this.y = y;
         this.lenght =lenght;
         this.orientation= orientation;
-
+        this.coordinatesList = coordinatesList;
     }
 
     public void addSquer(){
@@ -56,7 +80,26 @@ public class Ship {
     public String getOrientation(){
         return orientation;
     }
+    
+    public List<List<Integer>> getCoordinate(){
+        return coordinatesList;
+    }
 
+    public boolean checkIfIsOnBoard(int x, int y, int lenght, String orientation){
+        for(int i=1; i<lenght; i++)
+            if(orientation.equals("")){
+                y++;
+            }else{
+                x++;
+            }
+            
+        if(x< boardHEIGHT && y < boardWIDTH){
+            return true;
+        }else{
+            return false;
+        }}
+
+            
     @Override
     public String toString(){
 
