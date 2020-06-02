@@ -1,16 +1,19 @@
 public class Square {
     private final static String SYMBOL = "X";
 
-    public boolean isMark;
+    public String isMark = "~";
 
     public void mark(){
-        isMark = true; 
+        isMark = SYMBOL; 
     }
 
+    public void empty(){
+        isMark = "O";
+    }
 
     @Override
     public String toString(){
-        return isMark ? SYMBOL : "~";
+        return isMark;
     }
 
 }

@@ -6,11 +6,21 @@ public class Ocean {
     private static final int WIDTH = 10;
     private static final int HEIGHT = 10;
     private List<List<Square>> squares;
+    private List<List<Square>> emptySquares;
     
 
     public Ocean(List<Ship> ships){
 
         List<List<Square>> squares = new ArrayList<>();
+        List<List<Square>> emptySquares = new ArrayList<>();
+
+        for(int j = 0; j< HEIGHT; j++){
+            List<Square> line = new ArrayList<>();
+            for(int i = 0; i< WIDTH; i++){
+                line.add(new Square());
+            }
+            emptySquares.add(line);
+        }
 
         for(int j = 0; j< HEIGHT; j++){
             List<Square> line = new ArrayList<>();
@@ -36,8 +46,15 @@ public class Ocean {
             //squares.get(ship.getCordinateX()).set(ship.getCordinateY(), ship.getSquer(0));
             //squares.get(ship.getCordinateX()+ i).set(ship.getCordinateY(), ship.getSquer(0));    
         this.squares = squares;
+        this.emptySquares = emptySquares;
         //this.ship = ship;
     }
+
+
+    public List<List<Square>>  getEnemySquere(){
+        return this.emptySquares;
+    }
+
     
     public static int getWIDTH(){
         return WIDTH;
@@ -47,6 +64,10 @@ public class Ocean {
         return HEIGHT;
     }
 
+    public List<List<Square>> getSquere(){
+        return this.squares;
+    }
+
     @Override
     public String toString(){
         String newLine = "\n";
@@ -54,21 +75,36 @@ public class Ocean {
         String coordinateX = "  A B C D E F G H I J";
         
         //List<Integer> coordinateY = new ArrayList<>();
-        int coordinateY = 0;
+        int coordinatePlayerY = 0;
 
         sb.append(coordinateX);
         sb.append(newLine);
         for( List<Square> lines : squares){
-            sb.append(coordinateY);
+            sb.append(coordinatePlayerY);
             sb.append(" ");
             for(Square elements : lines){
                 sb.append(elements);
                 sb.append(" ");
             }
             sb.append(newLine);
-            coordinateY++;
+            coordinatePlayerY++;    
         }
+        sb.append(newLine);
+        int coordinateOpponentY = 0;
+        sb.append(coordinateX);
+        sb.append(newLine);
+        for( List<Square> lines : emptySquares){
+            sb.append(coordinateOpponentY);
+            sb.append(" ");
+            for(Square elements : lines){
+                sb.append(elements);
+                sb.append(" ");
+            }
+            sb.append(newLine);
+            coordinateOpponentY++;    
 
+        }
         return sb.toString();
+    
     }
 }

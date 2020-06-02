@@ -1,47 +1,36 @@
-public class Main {
-    /*
-    static List<Ship> ships = new ArrayList<>();
-    static List<List<Integer>> shipsCordinate = new ArrayList<>();
-    static List<Integer> fleet= new ArrayList<>();
-    */
-    public static void main(String[] args) {
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
 
 
 
-        Player player1 = new Player(); 
-        player1.hit();
-        System.out.println(player1.playerBoard.toString());
-        
-        //System.out.println(player1.opponentBoard.toString());
+public class Player {
 
-        //Player player2 = new Player(); 
-        //player2.hit();
-        //System.out.println(player2.playerBoard.toString());
-        //System.out.println(player2.opponentBoard.toString());
+    public static String test = "test";
 
-        //Player player2 = new Player(); 
+    List<Ship> ships = new ArrayList<>();
+    List<List<Integer>> shipsCordinate = new ArrayList<>();
+    List<Integer> fleetSize = new ArrayList<>();
+    Ocean playerBoard;
+	
+
+    public Player() {
+        setboard();
+    }  
     
 
-
-        //Player player3 = new Player(); 
-        //player1.setboard();s
-
-        //Player player2 = new Player(); 
-        //player2.setboard();
-    }
-    /*
-    private static boolean setShips(Ship ship) {
+    private boolean setShips(Ship ship) {
         //System.out.println(checkPutShip(ship.getCoordinate()));
         boolean status = false;
         if (checkPutShip(ship.getCoordinate())){ 
-        shipsCordinate.addAll(ship.getCoordinate());
-        ships.add(ship);
+        this.shipsCordinate.addAll(ship.getCoordinate());
+        this.ships.add(ship);
         status = true;
         }
         return status;
     }
 
-    public static boolean checkPutShip(List<List<Integer>> incomingCordinate) {
+    public boolean checkPutShip(List<List<Integer>> incomingCordinate) {
         //check if input ship ([][] inf) will conflict with other 
         boolean possibleToAdd = true;
         int firstVal = 0;
@@ -63,12 +52,45 @@ public class Main {
         return possibleToAdd;
         }
 
-    public static void setboard(){
-        fleet.add(2); fleet.add(3); fleet.add(4); fleet.add(2);
+    public <Squer> void hit() {
+        final Scanner myObj = new Scanner(System.in);
+        System.out.println("Type pole");
+        final String userLetter1 = myObj.nextLine();
 
-        for(int i : fleet){
-            boolean status = false;
+        System.out.println("Type pole");
+        final String userLetter2 = myObj.nextLine();
+
+        int input1 = Integer.valueOf(userLetter1);
+        int input2 = Integer.valueOf(userLetter2);
+        
+        List<Square> lines = playerBoard.getSquere().get(input1);
+        Square shot = lines.get(input2);
+        
+
+        List<Square> linesEnemy = playerBoard.getEnemySquere().get(input1);
+        Square shotEnemy = linesEnemy.get(input2);
+
+        //List<List<Square>> linesEnemy = playerBoard.getEnemySquere();
+        
+
+        if (shot.toString().equals("X")){
+            shotEnemy.mark();
             
+        }else{
+            shot.empty();
+            shotEnemy.empty();
+        }
+
+
+    }
+
+
+    public void setboard(){
+        fleetSize.add(2);// fleetSize.add(3); fleetSize.add(4); 
+
+        for(int i : fleetSize){
+            boolean status = false;
+            //Ocean playerBoard = new Ocean(ships);
             while(status != true){
                 final Scanner myObj = new Scanner(System.in);
                 System.out.println("Type pole");
@@ -90,12 +112,17 @@ public class Main {
                 }else{
                     System.out.println("Ship colision");
                 }
-                Ocean bałtyk = new Ocean(ships);
-                System.out.println(bałtyk.toString());
+
+                playerBoard = new Ocean(ships);
+                System.out.println(playerBoard.toString());
             }
         }
-        System.out.println(shipsCordinate);
-        Ocean bałtyk = new Ocean(ships);
-        System.out.println(bałtyk.toString());
-    }*/
+
+        
+    System.out.println(shipsCordinate);
+    Ocean playerBoard = new Ocean(ships);
+    System.out.println(playerBoard.toString());
+
+
+    }
 }
