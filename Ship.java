@@ -4,14 +4,21 @@ import java.util.List;
 public class Ship {
 
     
-    private List<Square> squares;
+    private List<Square> squares; // shipModules, shipSquares ?
     private int x;
     private int y; 
     private int lenght; 
     private String orientation; 
     private List<List<Integer>> coordinatesList; 
-    private static final int boardWIDTH = Ocean.getWIDTH();
+    private static final int boardWIDTH = Ocean.getWIDTH();  
     private static final int boardHEIGHT = Ocean.getHEIGHT();
+
+    /*
+    private final enum Orientation {
+        "VERTICAL",
+        "HORIZONTAL"
+    }
+    */
     
 
     public Ship(int x, int y, int lenght, String orientation){
@@ -20,10 +27,10 @@ public class Ship {
         squares = new ArrayList<>();
         List<List<Integer>> coordinatesList = new ArrayList<>();
         
-        Square ship = new Square();
+        Square ship = new Square(); // shipModule ?
         ship.mark();
         
-        if(checkIfIsOnBoard(x, y, lenght, orientation)){
+        if(checkIfIsOnBoard(x, y, lenght, orientation)){  // checkIfFits
             int coordinateX = x;
             int coordinateY = y;
 
@@ -50,7 +57,7 @@ public class Ship {
         this.coordinatesList = coordinatesList;
     }
 
-    public void addSquer(){
+    public void addSquer(){  // addModule ? ale czy używana ta metoda?
 
         Square ship = new Square();
         ship.mark();
@@ -106,9 +113,9 @@ public class Ship {
         
         StringBuilder sb = new StringBuilder();
 
-        for( Square elements : squares){
+        for( Square elements : squares){ // element ?
                 sb.append(elements);
-                sb.append(" ");
+                sb.append(" "); // co to?
             }
         return sb.toString();
     }
