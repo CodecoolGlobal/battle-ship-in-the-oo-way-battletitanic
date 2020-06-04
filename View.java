@@ -21,28 +21,21 @@ public class View {
     }
 
     public String inputFromUser(String text) {
-        try {
-            System.out.println(" " + text + ":");
-            System.out.println(" ");
-            Scanner scannerFromUser = new Scanner(System.in);
-            String input = scannerFromUser.nextLine();
-            return input;
-        } finally {
-            in.close();
-        }
+        System.out.println(" " + text + ":");
+        System.out.println(" ");
+        Scanner scannerFromUser = new Scanner(System.in);
+        String input = scannerFromUser.nextLine();
+        return input;
         
     }
     
     public int intFromUser(int text) {
-        try {
-            System.out.println(" " + text + ":");
-            System.out.println(" ");
-            Scanner scannerFromUser = new Scanner(System.in);
-            int input = scannerFromUser.nextInt();
-            return input;
-        } finally {
-            in.close();
-        }
+        System.out.println(" " + text + ":");
+        System.out.println(" ");
+        Scanner scannerFromUser = new Scanner(System.in);
+        int input = scannerFromUser.nextInt();
+        return input;
+        
     }
     
     public void pause() throws InterruptedException {
