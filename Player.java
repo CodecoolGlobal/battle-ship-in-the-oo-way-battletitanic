@@ -94,7 +94,7 @@ public class Player {
     }
 
     public void setboard(){
-        fleetSize.add(2); //fleetSize.add(3); //fleetSize.add(4); 
+        fleetSize.add(2); fleetSize.add(3); //fleetSize.add(4); 
 
         for(int i : fleetSize){
             boolean status = false;
