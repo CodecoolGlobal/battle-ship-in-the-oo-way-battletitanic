@@ -54,10 +54,10 @@ public class Player {
 
     public <Squer> void hit(Player enemy) {
         final Scanner myObj = new Scanner(System.in);
-        System.out.println("Type pole");
+        System.out.println("Type pole poziomo");
         final String userLetter1 = myObj.nextLine();
 
-        System.out.println("Type pole");
+        System.out.println("Type pole pionowo");
         final String userLetter2 = myObj.nextLine();
 
         int input1 = Integer.valueOf(userLetter1);
@@ -94,7 +94,7 @@ public class Player {
     }
 
     public void setboard(){
-        fleetSize.add(2); fleetSize.add(3); //fleetSize.add(4); 
+        fleetSize.add(2); //fleetSize.add(3); //fleetSize.add(4); 
 
         for(int i : fleetSize){
             boolean status = false;
