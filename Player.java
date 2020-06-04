@@ -52,7 +52,7 @@ public class Player {
         return possibleToAdd;
         }
 
-    public <Squer> void hit(Ocean x, Ocean y) {
+    public <Squer> void hit(Ocean x) {
         final Scanner myObj = new Scanner(System.in);
         System.out.println("Type pole");
         final String userLetter1 = myObj.nextLine();
@@ -74,6 +74,8 @@ public class Player {
 
         if (shot.toString().equals("X")){
             shotEnemy.mark();
+
+
             
         }else{
             shot.empty();
@@ -82,6 +84,7 @@ public class Player {
 
 
     }
+
 
 
     public void setboard(){
