@@ -52,7 +52,7 @@ public class Player {
         return possibleToAdd;
         }
 
-    public <Squer> void hit(Ocean x) {
+    public <Squer> void hit(Player enemy) {
         final Scanner myObj = new Scanner(System.in);
         System.out.println("Type pole");
         final String userLetter1 = myObj.nextLine();
@@ -63,7 +63,7 @@ public class Player {
         int input1 = Integer.valueOf(userLetter1);
         int input2 = Integer.valueOf(userLetter2);
         
-        List<Square> lines = x.getSquere().get(input2);
+        List<Square> lines = enemy.playerBoard.getSquere().get(input2);
         Square shot = lines.get(input1);
         
         List<Square> linesEnemy = playerBoard.getEnemySquere().get(input2);
@@ -74,8 +74,7 @@ public class Player {
 
         if (shot.toString().equals("X")){
             shotEnemy.mark();
-
-
+            removeFromList(input1, input2, enemy);
             
         }else{
             shot.empty();
@@ -85,10 +84,17 @@ public class Player {
 
     }
 
-
+    public void removeFromList(int coordinateX, int coordinateY, Player enemy){
+        List<Integer> cordinateToRemove = new ArrayList<>();
+        cordinateToRemove.add(coordinateX); cordinateToRemove.add(coordinateY);
+        //System.out.println(cordinateToRemove);
+        //System.out.println(enemy.shipsCordinate);
+        enemy.shipsCordinate.remove(cordinateToRemove);
+        //System.out.println(enemy.shipsCordinate);
+    }
 
     public void setboard(){
-        fleetSize.add(2); fleetSize.add(3); //fleetSize.add(4); 
+        fleetSize.add(2); //fleetSize.add(3); //fleetSize.add(4); 
 
         for(int i : fleetSize){
             boolean status = false;
