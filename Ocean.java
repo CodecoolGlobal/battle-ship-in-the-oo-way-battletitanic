@@ -5,8 +5,8 @@ public class Ocean {
     
     private static final int WIDTH = 10;
     private static final int HEIGHT = 10;
-    private List<List<Square>> squares;
-    private List<List<Square>> emptySquares;
+    private List<List<Square>> squares;  // myBoard
+    private List<List<Square>> emptySquares;  // opponentsBoard
     
 
     public Ocean(List<Ship> ships){

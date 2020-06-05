@@ -115,7 +115,7 @@ public class Ship {
 
         for( Square elements : squares){ // element ?
                 sb.append(elements);
-                sb.append(" "); // co to?
+                sb.append(" ");
             }
         return sb.toString();
     }

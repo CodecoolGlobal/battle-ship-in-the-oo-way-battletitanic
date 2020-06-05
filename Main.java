@@ -39,5 +39,4 @@ public class Main {
         view.pause(3);
         System.out.println(View.ANSI_RED + "End of the game" + View.ANSI_RESET);
     }
-
 }
