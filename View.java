@@ -67,6 +67,23 @@ public class View {
         System.out.println("");
         Scanner scannerFromUser = new Scanner(System.in);
         String input = scannerFromUser.nextLine();
-                                                                                                                        
+    
+    }
+
+    public void printRules() {
+        System.out.println("War just started! \n Two brave commanders have to fight using his fleet \n First step: choose coordinates of ships.");
+    
+    }
+        
+    public void printStart() {
+        printTitle("Welcome in the BattleShips");
+        pause(2);
+        printInfo("         powered by");
+        pause(1);
+        printInfo("   🛳 Titanic Corporation 🛳");
+        pause(2);;
+        keyPressed("  press any key to continue");
+        clearScreen();
+    
     }
 }

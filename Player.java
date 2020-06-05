@@ -55,10 +55,10 @@ public class Player {
 
     public <Squer> void hit(Player enemy) {
         final Scanner myObj = new Scanner(System.in);
-        System.out.println("Type pole poziomo");
+        System.out.println("- Type horizontal coordinates -");
         final String userLetter1 = myObj.nextLine();
 
-        System.out.println("Type pole pionowo");
+        System.out.println("- Type vertical coordinates -");
         final String userLetter2 = myObj.nextLine();
         view.clearScreen();
 
@@ -103,13 +103,13 @@ public class Player {
             //Ocean playerBoard = new Ocean(ships);
             while(status != true){
                 final Scanner myObj = new Scanner(System.in);
-                System.out.println("Type pole");
+                System.out.println("- Type horizontal coordinates -");
                 final String userLetter1 = myObj.nextLine();
 
-                System.out.println("Type pole");
+                System.out.println("- Type vertical coordinates -");
                 final String userLetter2 = myObj.nextLine();
 
-                System.out.println("Type orientation");
+                System.out.println("- Type orientation -");
                 final String userLetter3 = myObj.nextLine();
 
                 int input1 = Integer.valueOf(userLetter1);
@@ -120,11 +120,11 @@ public class Player {
                 if (setShips(statek)){
                     status = true;
                 }else{
-                    System.out.println("Ship colision");
+                    System.out.println("- Ship colision -");
                 }
 
                 playerBoard = new Ocean(ships);
-                System.out.println(playerBoard.toString());
+                System.out.println(View.ANSI_BLUE + playerBoard.toString() + View.ANSI_RESET);
             }
         }
 

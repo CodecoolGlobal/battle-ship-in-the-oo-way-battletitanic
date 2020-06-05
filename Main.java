@@ -4,14 +4,8 @@ public class Main {
 
         View view = new View();
 
-        view.printTitle("Welcome in the BattleShips");
-        view.pause(2);
-        view.printInfo("         powered by");
-        view.pause(1);
-        view.printInfo("   🛳 Titanic Corporation 🛳");
-        view.pause(2);;
-        view.keyPressed("  press any key to continue");
-        view.clearScreen();
+        view.printStart();
+        view.printRules();
 
         Player player1 = new Player();
         Player player2 = new Player();
@@ -21,6 +15,8 @@ public class Main {
 
         while(player1.shipsCordinate != null && !player1.shipsCordinate.isEmpty() && player2.shipsCordinate != null && !player2.shipsCordinate.isEmpty()) {
             
+            System.out.println(player1.playerBoard.toString());
+            System.out.println(player1.shipsCordinate);
             player1.hit(player2);
             System.out.println(player1.playerBoard.toString());
             System.out.println(player1.shipsCordinate);
@@ -31,16 +27,17 @@ public class Main {
                 
         }
         if (!player1HasShips && !player2HasShips) {
-            System.out.println("DRAW !");
+            System.out.println(View.ANSI_GREEN + "DRAW !" + View.ANSI_RESET);
         }
         else if (!player2HasShips) {
-            System.out.println("Won player 2");
+            System.out.println(View.ANSI_GREEN + "Won player 2" + View.ANSI_RESET);
         }
         else  {
-            System.out.println("Won player 1");
+            System.out.println(View.ANSI_GREEN + "Won player 1" + View.ANSI_RESET);
         }
         
-        System.out.println("End of the game");
+        view.pause(3);
+        System.out.println(View.ANSI_RED + "End of the game" + View.ANSI_RESET);
     }
 
 }
