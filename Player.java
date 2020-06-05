@@ -12,6 +12,7 @@ public class Player {
     List<List<Integer>> shipsCordinate = new ArrayList<>();
     List<Integer> fleetSize = new ArrayList<>();
     Ocean playerBoard;
+    View view = new View();
 	
 
     public Player() {
@@ -59,6 +60,7 @@ public class Player {
 
         System.out.println("Type pole pionowo");
         final String userLetter2 = myObj.nextLine();
+        view.clearScreen();
 
         int input1 = Integer.valueOf(userLetter1);
         int input2 = Integer.valueOf(userLetter2);
