@@ -76,7 +76,9 @@ public class Player {
         if (shot.toString().equals("X")){
             shotEnemy.mark();
             removeFromList(input1, input2, enemy);
-            
+        }else if(shot.toString().equals("O")) {
+            System.out.println("Already hit");
+            hit(enemy);
         }else{
             shot.empty();
             shotEnemy.empty();

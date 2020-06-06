@@ -3,10 +3,14 @@ import java.util.Random;
 
 public class CompEasy extends Comp {
 
+    Random random; 
+
+    public CompEasy() {
+        random = new Random();
+    }
 
     @Override
     public <Squer> void hit(Player enemy) {
-        Random random = new Random();
 
         int rand1 = random.nextInt(9);
         int rand2 = random.nextInt(9);
@@ -23,7 +27,8 @@ public class CompEasy extends Comp {
         if (shot.toString().equals("X")){
             shotEnemy.mark();
             removeFromList(rand1, rand2, enemy);
-            
+        }else if(shot.toString().equals("O")) {
+            hit(enemy);    
         }else{
             shot.empty();
             shotEnemy.empty();
