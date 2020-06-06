@@ -16,11 +16,11 @@ public class Player {
 	
 
     public Player() {
-        setboard();
+        
     }  
     
 
-    private boolean setShips(Ship ship) {
+    public boolean setShips(Ship ship) {
         //System.out.println(checkPutShip(ship.getCoordinate()));
         boolean status = false;
         if (checkPutShip(ship.getCoordinate())){ 
@@ -56,11 +56,10 @@ public class Player {
     public <Squer> void hit(Player enemy) {
         final Scanner myObj = new Scanner(System.in);
         System.out.println("- Type horizontal coordinates -");
-        final String userLetter1 = myObj.nextLine();
+        final String userLetter1 = myObj.nextLine();  //tutaj input z view - do zrobienia wieczorem
 
         System.out.println("- Type vertical coordinates -");
         final String userLetter2 = myObj.nextLine();
-        view.clearScreen();
 
         int input1 = Integer.valueOf(userLetter1);
         int input2 = Integer.valueOf(userLetter2);
@@ -111,13 +110,6 @@ public class Player {
 
                 System.out.println("- Type orientation -");
                 final String userLetter3 = myObj.nextLine();
-
-                if (userLetter1 == "A") {
-                    
-                }
-                else if (userLetter1 == "B") {
-                    int input1 = 1;
-                }
 
                 int input1 = Integer.valueOf(userLetter1);
                 int input2 = Integer.valueOf(userLetter2);
