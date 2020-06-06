@@ -7,7 +7,7 @@ public class Main {
         //view.printStart();
         //view.printRules();
 
-        Player player1 = new CompEasy();
+        Player player1 = new CompMed();
         Player player2 = new Player();
         player1.setboard();
         player2.setboard();
