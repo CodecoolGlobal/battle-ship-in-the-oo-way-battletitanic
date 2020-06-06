@@ -72,7 +72,7 @@ public class Ocean {
     public String toString(){
         String newLine = "\n";
         StringBuilder sb = new StringBuilder();
-        String coordinateX = "  A B C D E F G H I J";
+        String coordinateX = View.ANSI_YELLOW + "  A B C D E F G H I J" + View.ANSI_RESET;
         String space = "    ";
         //List<Integer> coordinateY = new ArrayList<>();
         int coordinatePlayerY = 0;
@@ -80,17 +80,17 @@ public class Ocean {
         sb.append(coordinateX); sb.append(space); sb.append(" "); sb.append(coordinateX);
         sb.append(newLine);
         for(int i= 0; i < squares.size(); i++){
-            sb.append(coordinatePlayerY);
+            sb.append(View.ANSI_YELLOW + coordinatePlayerY + View.ANSI_RESET);
             sb.append(" ");
             for(Square elements : squares.get(i)){
-                sb.append(elements);
+                sb.append(View.ANSI_BLUE + elements + View.ANSI_RESET);
                 sb.append(" ");
             }
             sb.append(space);
-            sb.append(coordinatePlayerY);
+            sb.append(View.ANSI_YELLOW + coordinatePlayerY + View.ANSI_RESET);
             sb.append(" ");
             for(Square elements : emptySquares.get(i)){
-                sb.append(elements);
+                sb.append(View.ANSI_BLUE + elements + View.ANSI_RESET);
                 sb.append(" ");
             }
             

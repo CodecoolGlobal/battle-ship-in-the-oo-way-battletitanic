@@ -71,7 +71,7 @@ public class View {
     }
 
     public void printRules() {
-        System.out.println("War just started! \n Two brave commanders have to fight using his fleet \n First step: choose coordinates of ships.");
+        System.out.println("War just started! \nTwo brave commanders have to fight using his fleet \nFirst step: choose coordinates of ships.");
     
     }
         

@@ -96,7 +96,7 @@ public class Player {
     }
 
     public void setboard(){
-        fleetSize.add(2); //fleetSize.add(3); //fleetSize.add(4); 
+        fleetSize.add(2); //fleetSize.add(3); //fleetSize.add(4); //fleetSize.add(5);
 
         for(int i : fleetSize){
             boolean status = false;
@@ -111,6 +111,13 @@ public class Player {
 
                 System.out.println("- Type orientation -");
                 final String userLetter3 = myObj.nextLine();
+
+                if (userLetter1 == "A") {
+                    
+                }
+                else if (userLetter1 == "B") {
+                    int input1 = 1;
+                }
 
                 int input1 = Integer.valueOf(userLetter1);
                 int input2 = Integer.valueOf(userLetter2);
