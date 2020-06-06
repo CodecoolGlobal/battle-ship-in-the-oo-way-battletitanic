@@ -13,11 +13,11 @@ public class CompMed extends Comp {
     @Override
     public <Squer> void hit(Player enemy) {
 
-        //int rand1 = random.nextInt(9);
-        //int rand2 = random.nextInt(9);
+        int rand1 = random.nextInt(9);
+        int rand2 = random.nextInt(9);
 
-        int rand1 = 0;
-        int rand2 = 0;
+        //int rand1 = 0;
+        //int rand2 = 0;
 
         List<Square> lines = enemy.playerBoard.getSquere().get(rand2);
         Square shot = lines.get(rand1);
