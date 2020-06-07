@@ -72,8 +72,12 @@ public class Player {
 
         //List<List<Square>> linesEnemy = playerBoard.getEnemySquere();
         
-
-        if (shot.toString().equals("X")){
+        if(shotEnemy.toString().equals("X")){
+            System.out.println("dupa");
+            hit(enemy);
+            System.out.println("dupa");
+        }
+        else if(shot.toString().equals("X")){
             shotEnemy.mark();
             removeFromList(input1, input2, enemy);
         }else if(shot.toString().equals("O")) {
