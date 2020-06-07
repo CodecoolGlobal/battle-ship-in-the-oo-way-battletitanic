@@ -12,7 +12,7 @@ public class View {
     public static final String ANSI_CYAN = "\u001B[36m";
     public static final String ANSI_WHITE = "\u001B[37m";
 
-    public void printTitle(String title) {
+    public void printTitle(String title) { 
         System.out.println(ANSI_YELLOW + " ⚓️ ⚓️ ⚓️ ⚓️ ⚓️ ⚓️ ⚓️ ⚓️ ⚓️ ⚓️ ⚓️ " + ANSI_RESET);
         System.out.println(ANSI_BLUE + "   " + title.toUpperCase() + ANSI_RESET);
         System.out.println(ANSI_YELLOW + " ⚓️ ⚓️ ⚓️ ⚓️ ⚓️ ⚓️ ⚓️ ⚓️ ⚓️ ⚓️ ⚓️ " + ANSI_RESET);
@@ -45,8 +45,8 @@ public class View {
 
     }
 
-    public int intFromUser(int text) {
-        System.out.println(" " + text + ":");
+    public static int userInput(String text) {
+        System.out.println(ANSI_BLUE + " " + text + ANSI_RESET);
         System.out.println(" ");
         Scanner scannerFromUser = new Scanner(System.in);
         int input = scannerFromUser.nextInt();
@@ -71,19 +71,19 @@ public class View {
     }
 
     public void printRules() {
-        System.out.println("War just started! \nTwo brave commanders have to fight using his fleet \nFirst step: choose coordinates of ships.");
+        System.out.println(ANSI_BLUE + "\nWar just started! \nTwo brave commanders have to fight using his fleet \nFirst step: choose coordinates of ships.\n" + ANSI_RESET);
     
     }
-        
+
     public void printStart() {
         printTitle("Welcome in the BattleShips");
-        pause(2);
+        pause(1);
         printInfo("         powered by");
         pause(1);
         printInfo("   🛳 Titanic Corporation 🛳");
         pause(2);;
         keyPressed("  press any key to continue");
         clearScreen();
-    
     }
+    
 }
