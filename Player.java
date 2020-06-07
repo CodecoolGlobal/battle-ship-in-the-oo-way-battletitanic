@@ -47,6 +47,42 @@ public class Player {
         return possibleToAdd;
         }
 
+    public static int inputLetter(String userLetter1) {
+        if (userLetter1.equals("A")) {
+            int input0 = 0;
+            return input0;
+        }else if (userLetter1.equals("B")) {
+            int input1 = 1;
+            return input1;
+        }else if (userLetter1.equals("C")) {
+            int input2 = 2;
+            return input2;
+        }else if (userLetter1.equals("D")) {
+            int input3 = 3;
+            return input3;
+        }else if (userLetter1.equals("E")) {
+            int input4 = 4;
+            return input4;
+        }else if (userLetter1.equals("F")) {
+            int input5 = 5;
+            return input5;
+        }else if (userLetter1.equals("G")) {
+            int input6 = 6;
+            return input6;
+        }else if (userLetter1.equals("H")) {
+            int input7 = 7;
+            return input7;
+        }else if (userLetter1.equals("I")) {
+            int input8 = 8;
+            return input8;
+        }else if (userLetter1.equals("J")) {
+            int input9 = 9; 
+            return input9; 
+        }else{
+            return -1;
+        }
+    }
+
     public <Squer> void hit(Player enemy) {
         final Scanner myObj = new Scanner(System.in);
         System.out.println(View.ANSI_RED + "- Type horizontal coordinates -\n|A B C D E F G H I J|" + View.ANSI_RESET);
@@ -55,7 +91,10 @@ public class Player {
         System.out.println(View.ANSI_RED + "- Type vertical coordinates -|0 1 2 3 4 5 6 7 8 9|" + View.ANSI_RESET);
         final String userLetter2 = myObj.nextLine();
 
-        int input1 = Integer.valueOf(userLetter1);
+        int input1 = inputLetter(userLetter1);
+        if (input1 == -1) {
+            input1 = inputLetter(userLetter1);
+        }
         int input2 = Integer.valueOf(userLetter2);
         
         List<Square> lines = enemy.playerBoard.getSquere().get(input2);
@@ -63,13 +102,10 @@ public class Player {
         
         List<Square> linesEnemy = playerBoard.getEnemySquere().get(input2);
         Square shotEnemy = linesEnemy.get(input1);
-
-        //List<List<Square>> linesEnemy = playerBoard.getEnemySquere();
         
         if(shotEnemy.toString().equals("X")){
-            System.out.println("dupa");
+            System.out.println("- Already hit. Try again! -");
             hit(enemy);
-            System.out.println("dupa");
         }
         else if(shot.toString().equals("X")){
             shotEnemy.mark();
@@ -89,42 +125,7 @@ public class Player {
         enemy.shipsCordinate.remove(cordinateToRemove);
     }
 
-    public static int inputLetter(String userLetter1) {
-
-        if (userLetter1.equals("A")) {
-            int input0 = 0;
-            return input0;
-        }else if (userLetter1.equals("B")) {
-            int input1 = 1;
-            return input1;
-        }else if (userLetter1.equals("C")) {
-            int input2 = 2;
-            return input2;
-        }else if (userLetter1.equals("C")) {
-            int input3 = 3;
-            return input3;
-        }else if (userLetter1.equals("D")) {
-            int input4 = 4;
-            return input4;
-        }else if (userLetter1.equals("E")) {
-            int input5 = 5;
-            return input5;
-        }else if (userLetter1.equals("F")) {
-            int input6 = 6;
-            return input6;
-        }else if (userLetter1.equals("G")) {
-            int input7 = 7;
-            return input7;
-        }else if (userLetter1.equals("H")) {
-            int input8 = 8;
-            return input8;
-        }else if (userLetter1.equals("I")) {
-            int input9 = 9; 
-            return input9; 
-        }else{
-            return -1;
-        }
-    }
+    
 
     public void setboard(){
         fleetSize.add(2); //fleetSize.add(3); //fleetSize.add(4); //fleetSize.add(5);
@@ -142,9 +143,10 @@ public class Player {
                 System.out.println(View.ANSI_RED + "- Type orientation -\n|Horizontal: not empty user input|\n|Vertical: empty user input|" + View.ANSI_RESET);
                 final String userLetter3 = myObj.nextLine();
 
-                
-                //inputLetter(userLetter1);
                 int input1 = inputLetter(userLetter1);
+                if (input1 == -1) {
+                    input1 = inputLetter(userLetter1);
+                }
                 int input2 = Integer.valueOf(userLetter2);
                 
                 Ship statek = new Ship(input1, input2, i, userLetter3);
@@ -160,8 +162,8 @@ public class Player {
             }
         }
 
-    System.out.println(shipsCordinate);
-    Ocean playerBoard = new Ocean(ships);
+    //System.out.println(shipsCordinate);
+    //Ocean playerBoard = new Ocean(ships);
     //System.out.println(playerBoard.toString());
 
     }

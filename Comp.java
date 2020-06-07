@@ -34,8 +34,8 @@ public class Comp extends Player{
         }
 
     System.out.println(View.ANSI_BLUE + playerBoard.toString() + View.ANSI_RESET);
-    System.out.println(shipsCordinate);
-    Ocean playerBoard = new Ocean(ships);
+    //System.out.println(shipsCordinate);
+    //Ocean playerBoard = new Ocean(ships);
     //System.out.println(playerBoard.toString());
 
 

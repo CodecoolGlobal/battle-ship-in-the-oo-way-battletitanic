@@ -23,9 +23,7 @@ public class CompEasy extends Comp {
 
         //List<List<Square>> linesEnemy = playerBoard.getEnemySquere();
         if(shotEnemy.toString().equals("X")){
-            System.out.println("dupa");
             hit(enemy);
-            System.out.println("dupa");
         }
         else if(shot.toString().equals("X")){
             shotEnemy.mark();
