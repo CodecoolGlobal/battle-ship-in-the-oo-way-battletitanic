@@ -78,9 +78,9 @@ public class Main {
         boolean player2HasShips = player2.shipsCordinate != null && !player2.shipsCordinate.isEmpty();
 
         System.out.println(player2.playerBoard.toString());
-        System.out.println("ONLY FOR DEMO: " + player1.shipsCordinate);
-        System.out.println(View.ANSI_GREEN + "\nPlease wait..." + View.ANSI_RESET);
-        view.pause(5);
+        //System.out.println("ONLY FOR DEMO: " + player1.shipsCordinate);
+        //System.out.println(View.ANSI_GREEN + "\nPlease wait..." + View.ANSI_RESET);
+        //view.pause(5);
         view.clearScreen();
 
         while(player1HasShips && player2HasShips) {
