@@ -106,7 +106,7 @@ public class Main {
         }
         if (!player1HasShips && !player2HasShips) {
             System.out.println(View.ANSI_GREEN + "DRAW !\n" + View.ANSI_RESET);
-        }else if (!player2HasShips) {
+        }else if (!player1HasShips) {
             System.out.println(View.ANSI_GREEN + "WIN\n" + View.ANSI_RESET);
         }else  {
             System.out.println(View.ANSI_GREEN + "DEFEAT\n" + View.ANSI_RESET);
