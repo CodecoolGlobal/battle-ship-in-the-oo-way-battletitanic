@@ -31,7 +31,7 @@ public class View {
     }
 
     public void printInfo(String info) {
-        System.out.println(ANSI_BLUE + " " + info + ANSI_RESET);
+        System.out.println(ANSI_BLUE + "" + info + ANSI_RESET);
         System.out.println("");
 
     }

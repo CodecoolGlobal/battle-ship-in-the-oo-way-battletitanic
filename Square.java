@@ -7,6 +7,10 @@ public class Square {
         isMark = SYMBOL; 
     }
 
+    public void redMark() {
+        isMark = View.ANSI_RED + SYMBOL + View.ANSI_RESET;
+    }
+
     public void empty(){ // markMiss
         isMark = "O";
     }

@@ -26,7 +26,7 @@ public class CompEasy extends Comp {
             hit(enemy);
         }
         else if(shot.toString().equals("X")){
-            shotEnemy.mark();
+            shotEnemy.redMark();
             removeFromList(rand1, rand2, enemy);
         }else if(shot.toString().equals("O")) {
             hit(enemy);    

@@ -108,7 +108,7 @@ public class Player {
             hit(enemy);
         }
         else if(shot.toString().equals("X")){
-            shotEnemy.mark();
+            shotEnemy.redMark();
             removeFromList(input1, input2, enemy);
         }else if(shot.toString().equals("O")) {
             System.out.println(View.ANSI_RED + "- Already hit. Try again! -" + View.ANSI_RESET);
