@@ -25,10 +25,14 @@ public class CompMed extends Comp {
         List<Square> linesEnemy = playerBoard.getEnemySquere().get(rand2);
         Square shotEnemy = linesEnemy.get(rand1);
 
-        if (shot.toString().equals("X")){
+        if(shotEnemy.toString().equals("X")){
+            System.out.println("dupa");
+            hit(enemy);
+            System.out.println("dupa");
+        }
+        else if(shot.toString().equals("X")){
             shotEnemy.mark();
             removeFromList(rand1, rand2, enemy);
-            hitMedExtend(rand1, rand2, enemy);
         }else if(shot.toString().equals("O")) {
             hit(enemy);    
         }else{
